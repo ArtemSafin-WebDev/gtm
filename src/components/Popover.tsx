@@ -4,7 +4,6 @@ export default function Popover() {
   const item = useHierarchyStore((state) => state.subhierarchyActiveItem);
   if (!item) return null;
 
-  console.log("Item", item);
   return (
     <div className="absolute right-[20%] bottom-[20%] z-10 flex w-[232px] flex-col overflow-hidden rounded-xl bg-white text-darktext shadow-xl">
       <h3 className="px-4 py-3 text-sm font-bold uppercase">

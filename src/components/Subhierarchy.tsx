@@ -27,8 +27,6 @@ export default function Subhierarchy() {
   });
   if (!pilesWithDms) return null;
 
-  console.log("Subhierarchical data", currentBlock);
-
   return (
     <div className="relative flex w-[240px] border-l border-greyish">
       <div className="absolute inset-0 scrollbar-hidden overflow-y-auto">

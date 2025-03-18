@@ -6,7 +6,6 @@ import Subhierarchy from "./Subhierarchy";
 export default function MainControls() {
   const activeMainItem = useHierarchyStore((state) => state.activeMainItem);
 
-  console.log("Active main item", activeMainItem);
   return (
     <div className="pointer-events-auto flex shrink-0 border-r border-greyish bg-white text-darktext">
       <div className="w-[280px]">

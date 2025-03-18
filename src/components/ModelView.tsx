@@ -12,8 +12,7 @@ export default function ModelView() {
 
   useEffect(() => {
     if (!ref.current) return;
-    console.log("Region data", regionData);
-    console.log("Cycles data", cyclesData);
+
     // Инициализация просмотра модели
   }, [regionData, cyclesData]);
 
