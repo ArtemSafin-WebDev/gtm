@@ -1,0 +1,1520 @@
+openapi: 3.0.3
+info:
+  title: API ИС ГТК - 3D
+  description: Описание API ИС ГТК для модуля 3D-визуализации
+  contact:
+    email: murtazin.ruslan@center2m.ru
+  version: 1.0.2
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: http://dev.ac2105.c2m.local/api/v1/getemon-3d
+tags:
+  - name: gtm-objects
+    description: Объекты с участками
+  - name: region
+    description: Данные участка
+  - name: cycles
+    description: Циклы измерений
+  - name: vertical-displacement
+    description: Получение данных Мониторинг вертикальных перемещений
+  - name: temperature-monitoring
+    description: Получение данных Мониторинга температур
+  - name: relative-difference-sediments
+    description: Данные Мониторинга относительной разности осадок
+paths:
+  /gtm-objects:
+    get:
+      tags:
+        - gtm-objects
+      summary: Возвращает список объектов ГТМ с их участками
+      description: Объекты ГТМ и их участки возвращаются с их параметрами
+      operationId: objects
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectsArray'
+        '400':
+          description: Bad request
+  /cycles:
+    get:
+      tags:
+        - cycles
+      summary: Возвращает список доступных циклов
+      description: Циклы содержат все его параметры
+      operationId: cycles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CyclesArray'
+        '400':
+          description: Bad request
+  /region/{region_code}:
+    get:
+      tags:
+        - region
+      summary: Возвращает параметры участка
+      description: Циклы содержат все его параметры
+      operationId: getRegionCode
+      parameters:
+        - name: region_code
+          in: path
+          description: Код участка
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Region'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /temperature-monitoring/{region_code}/{cycle_code}:
+    get:
+      tags:
+        - temperature-monitoring
+      summary: Возвращает значения Мониторинга температур для участка в выбранный цикл по глубинам с выбранным типом почв
+      description: Циклы содержат все его параметры
+      operationId: getTemperatureMonitoring
+      parameters:
+        - name: region_code
+          in: path
+          description: Выбранный участок
+          required: true
+          schema:
+            type: string
+        - name: cycle_code
+          in: path
+          description: Выбранный цикл
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TemperatureMonitoringArray'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /vertical-displacement/{region_code}/{cycle_code1}/{cycle_code2}:
+    get:
+      tags:
+        - vertical-displacement
+      summary: Возвращает значения вертикальных перемещений для участка в выбранный цикл
+      description: Циклы содержат все его параметры
+      operationId: getVerticalDisplacement
+      parameters:
+        - name: region_code
+          in: path
+          description: Выбранный участок
+          required: true
+          schema:
+            type: string
+        - name: cycle_code1
+          in: path
+          description: Выбранный начальный цикл
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: cycle_code2
+          in: path
+          description: Выбранный конечный цикл
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VerticalDisplacementArray'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+  /relative-difference-sediments/{region_code}/{cycle_code1}/{cycle_code2}:
+    get:
+      tags:
+        - relative-difference-sediments
+      summary: Возвращает Данные Мониторинга относительной разности осадок для участка в выбранные циклы
+      description: Циклы содержат все его параметры
+      operationId: getRelativeDifferenceSediments
+      parameters:
+        - name: region_code
+          in: path
+          description: Выбранный участок
+          required: true
+          schema:
+            type: string
+        - name: cycle_code1
+          in: path
+          description: Выбранный начальный цикл
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: cycle_code2
+          in: path
+          description: Выбранный конечный цикл
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelativeDifferenceSedimentsArray'
+        '400':
+          description: Bad request
+        '404':
+          description: Not found
+components:
+  schemas:
+    CyclesArray:
+      description: Список циклов
+      type: array
+      items:
+        type: object
+        properties:
+          code:
+            description: Название цикла
+            type: string
+          season:
+            type: string
+            description: Сезон
+            enum:
+              - SPRING
+              - FALL
+          year:
+            description: Год
+            type: integer
+            format: int32
+          name:
+            description: Название
+            type: string
+          rank:
+            description: Номер
+            type: integer
+            format: int32
+          period_date:
+            description: Период
+            type: string
+            format: date
+      example:
+        - code: IX
+          season: SPRING
+          year: 2023
+          name: IX (осень 2023)
+          rank: 9
+          period_date: '2023-12-31'
+        - code: VIII
+          season: SPRING
+          year: 2023
+          name: VIII (весна 2023)
+          rank: 8
+          period_date: '2023-08-31'
+    ObjectsArray:
+      description: Список объектов
+      type: array
+      items:
+        type: object
+        properties:
+          code:
+            description: Код площадки
+            type: string
+          area_code:
+            description: Код площадки
+            type: string
+          name:
+            description: Наименование объекта
+            type: string
+          region_count:
+            description: Количество участков
+            type: integer
+            format: int32
+          start_date:
+            description: Начало действия
+            type: string
+            format: date
+          end_date:
+            description: Окончание действия
+            type: string
+            format: date
+            nullable: true
+          regions:
+            description: Участки
+            type: array
+            items:
+              type: object
+              properties:
+                code:
+                  description: Код участка
+                  type: string
+                name:
+                  description: Наименование участка
+                  type: string
+      example:
+        - code: ГТМ.025
+          area_code: AR004
+          name: Куст газовых скважин № 24
+          region_count: 1
+          start_date: '2018-01-01'
+          end_date: null
+          regions:
+            - code: ГТМ.025.01
+              name: Куст газовых скважин № 24
+        - code: ГТМ.003
+          area_code: AR001
+          name: УПОУ и УЗОУ
+          region_count: 2
+          start_date: '2018-01-01'
+          end_date: null
+          regions:
+            - code: ГТМ.003.01
+              name: Газопровод УЗОУ
+            - code: ГТМ.003.02
+              name: Газопровод УПОУ
+    Region:
+      description: Данные участка
+      type: object
+      properties:
+        name:
+          description: Название участка
+          type: string
+        code:
+          description: Имя участка
+          type: string
+        size_length:
+          description: Длина участка
+          type: integer
+          format: int32
+        size_width:
+          description: Ширина участка
+          type: integer
+          format: int32
+        objects:
+          description: Объекты на участке
+          type: array
+          items:
+            type: object
+            properties:
+              piles:
+                description: Сваи на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код сваи
+                      type: string
+                    coord_x:
+                      description: X координата центра
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата центра
+                      type: number
+                      format: float
+                    diameter:
+                      description: Диаметр сваи
+                      type: number
+                      format: float
+                    length_under:
+                      description: Длина подземной части
+                      type: number
+                      format: float
+                    length_above:
+                      description: Длина надземной части
+                      type: number
+                      format: float
+              supports:
+                description: Опоры на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код опоры
+                      type: string
+                    pile_code:
+                      description: Код сваи на которой стоит опора
+                      type: string
+                    length:
+                      description: Длина стойки (м)
+                      type: number
+                      format: float
+                    width:
+                      description: Ширина стороны сечения стойки (мм)
+                      type: integer
+                      format: int16
+              traverses:
+                description: Траверсы на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    pile_code_1:
+                      description: Код опоры или сваи 1
+                      type: string
+                    pile_code_2:
+                      description: Код опоры или сваи 2
+                      type: string
+                    height_pile_1:
+                      description: Высота над уровнем земли в месте крепления к Опоре 1
+                      type: number
+                      format: float
+                    height_pile_2:
+                      description: Высота над уровнем земли в месте крепления к Опоре 2
+                      type: number
+                      format: float
+              pipelines:
+                description: Трубопроводы на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    pipeline_start_x:
+                      description: X координата начала трубопровода
+                      type: number
+                      format: float
+                    pipeline_start_y:
+                      description: Y координата начала трубопровода
+                      type: number
+                      format: float
+                    pipeline_start_z:
+                      description: Z координата начала трубопровода
+                      type: number
+                      format: float
+                    pipeline_end_x:
+                      description: X координата окончания трубопровода
+                      type: number
+                      format: float
+                    pipeline_end_y:
+                      description: Y координата окончания трубопровода
+                      type: number
+                      format: float
+                    pipeline_end_z:
+                      description: Z координата окончания трубопровода
+                      type: number
+                      format: float
+                    diameter:
+                      description: Диаметр трубопровода
+                      type: integer
+                      format: int16
+              platforms:
+                description: Площадки на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код площадки
+                      type: string
+                    name:
+                      description: Имя площадки
+                      type: string
+                    vertices:
+                      description: Вершины площадки
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          coord_x:
+                            description: X координата вершины
+                            type: number
+                            format: float
+                          coord_y:
+                            description: Y координата вершины
+                            type: number
+                            format: float
+                    thickness:
+                      description: Толщина настила, мм
+                      type: integer
+                      format: int16
+                    height:
+                      description: Высота  настила над уровнем земли (по нижней стороне) (м)
+                      type: number
+                      format: float
+                    fences:
+                      description: Ограждения
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          fence_start_x:
+                            description: X координата начала ограждения
+                            type: number
+                            format: float
+                          fence_start_y:
+                            description: Y координата начала ограждения
+                            type: number
+                            format: float
+                          fence_end_x:
+                            description: X координата окончания ограждения
+                            type: number
+                            format: float
+                          fence_end_y:
+                            description: Y координата окончания ограждения
+                            type: number
+                            format: float
+                    edges_dms:
+                      description: Грани с привязкой ДМ
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          edge_start_x:
+                            description: X координата начала грани
+                            type: number
+                            format: float
+                          edge_start_y:
+                            description: Y координата начала грани
+                            type: number
+                            format: float
+                          edge_end_x:
+                            description: X координата окончания грани
+                            type: number
+                            format: float
+                          edge_end_y:
+                            description: Y координата окончания грани
+                            type: number
+                            format: float
+                          dm_start_code:
+                            description: Код ДМ у начала грани
+                            type: string
+                          dm_end_code:
+                            description: Код ДМ у окончания грани
+                            type: string
+              ladders:
+                description: Лестницы на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    coord_start_x:
+                      description: X координата верхней точки, м
+                      type: number
+                      format: float
+                    coord_start_y:
+                      description: Y координата верхней точки, м
+                      type: number
+                      format: float
+                    coord_end_x:
+                      description: X координата нижней точки, м
+                      type: number
+                      format: float
+                    coord_end_y:
+                      description: Y координата нижней точки, м
+                      type: number
+                      format: float
+                    width:
+                      description: Ширина лестницы, м
+                      type: number
+                      format: float
+                    height_start:
+                      description: Высота над уровнем земли верхней точки лестницы, м
+                      type: number
+                      format: float
+                    height_end:
+                      description: Высота над уровнем земли в нижней точки лестницы, м
+                      type: number
+                      format: float
+              block_boxes:
+                description: Блок-боксы на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Блок-бокса
+                      type: string
+                    name:
+                      description: Имя сооружения
+                      type: string
+                    coord_x:
+                      description: X координата центра
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата центра
+                      type: number
+                      format: float
+                    length_x:
+                      description: Длина по оси X (м)
+                      type: number
+                      format: float
+                    length_y:
+                      description: Длина по оси Y (м)
+                      type: number
+                      format: float
+                    size_height:
+                      description: Высота Блок-бокса, м
+                      type: number
+                      format: float
+                    height_above:
+                      description: Высота блок-бокса над уровнем земли (по нижней стороне) (м)
+                      type: number
+                      format: float
+                    edges_orientation:
+                      description: Привязка пар ДМ к боковым граням (необязательный параметр)
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          orientation:
+                            description: Ориентация грани (X=0 - Запад, Y=0 - Юг)
+                            type: string
+                            enum:
+                              - Север
+                              - Восток
+                              - Юг
+                              - Запад
+                          dms_pairs:
+                            description: Пары ДМ относящиеся к этой грани
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                dms_start_code:
+                                  description: Код ДМ начала пары
+                                  type: string
+                                dms_end_code:
+                                  description: Код ДМ окончания пары
+                                  type: string
+                    door_orientation:
+                      description: Грань, со стороны которой расположена дверь (X=0 - Запад, Y=0 - Юг)
+                      type: string
+                      enum:
+                        - Север
+                        - Восток
+                        - Юг
+                        - Запад
+              communication_masts:
+                description: Мачты связи на участке имеют фиксированную высоту (24м) и фиксированную ширину стороны основания (1.4м).
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код мачты вязи
+                      type: string
+                    name:
+                      description: Имя объекта
+                      type: string
+                    coord_x:
+                      description: X координата центра
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата центра
+                      type: number
+                      format: float
+                    height_above:
+                      description: Высота мачты над уровнем земли (по нижней стороне) (м)
+                      type: number
+                      format: float
+                    edges_orientation:
+                      description: Привязка пар ДМ к боковым граням (необязательный параметр)
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          orientation:
+                            description: Ориентация грани (X=0 - Запад, Y=0 - Юг)
+                            type: string
+                            enum:
+                              - Север
+                              - Восток
+                              - Юг
+                              - Запад
+                          dms_pairs:
+                            description: Пары ДМ относящиеся к этой грани
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                dms_start_code:
+                                  description: Код ДМ начала пары
+                                  type: string
+                                dms_end_code:
+                                  description: Код ДМ окончания пары
+                                  type: string
+              spotlight_masts:
+                description: Мачта прожекторная
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код прожекторной мачты
+                      type: string
+                    name:
+                      description: Имя объекта
+                      type: string
+                    size_height:
+                      description: Высота мачты над уровнем земли (по нижней стороне) 24 м или 32,5м
+                      type: number
+                      format: float
+                    coord_x:
+                      description: X координата центра
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата центра
+                      type: number
+                      format: float
+                    height_above:
+                      description: Высота мачты над уровнем земли (по нижней стороне) (м)
+                      type: number
+                      format: float
+                    edges_orientation:
+                      description: Привязка пар ДМ к боковым граням (необязательный параметр)
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          orientation:
+                            description: Ориентация грани (X=0 - Запад, Y=0 - Юг)
+                            type: string
+                            enum:
+                              - Север
+                              - Восток
+                              - Юг
+                              - Запад
+                          dms_pairs:
+                            description: Пары ДМ относящиеся к этой грани
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                dms_start_code:
+                                  description: Код ДМ начала пары
+                                  type: string
+                                dms_end_code:
+                                  description: Код ДМ окончания пары
+                                  type: string
+              wells:
+                description: Скважины на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код cкважины
+                      type: string
+                    name:
+                      description: Имя cкважины
+                      type: string
+                    coord_x:
+                      description: X координата центра
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата центра
+                      type: number
+                      format: float
+                    orientation:
+                      description: Ориентация скважины (X=0 - Запад, Y=0 - Юг) в какую сторону "смотрят" краны
+                      type: string
+                      enum:
+                        - Север
+                        - Восток
+                        - Юг
+                        - Запад
+              horizontal_flare_devices:
+                description: Устройства факельные горизонтальные на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код УФГ
+                      type: string
+                    name:
+                      description: Имя УФГ
+                      type: string
+                    coord_x:
+                      description: Х координата точки входа
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата точки входа
+                      type: number
+                      format: float
+                    orientation:
+                      description: Ориентация ДМ (X=0 - Запад, Y=0 - Юг) в какую сторону от точки входа трубопроводов "смотрит" факел
+                      type: string
+                      enum:
+                        - Север
+                        - Восток
+                        - Юг
+                        - Запад
+              dms:
+                description: Деформационные марки на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код ДМ
+                      type: string
+                    name:
+                      description: Имя ДМ
+                      type: string
+                    object_code:
+                      description: Код связанного объекта
+                      type: string
+                    orientation:
+                      description: Ориентация ДМ (X=0 - Запад, Y=0 - Юг)
+                      type: string
+                      enum:
+                        - Север
+                        - Восток
+                        - Юг
+                        - Запад
+                        - СЗ
+                        - СВ
+                        - ЮЗ
+                        - ЮВ
+              rps:
+                description: Реперы на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код репера
+                      type: string
+                    name:
+                      description: Имя репера
+                      type: string
+                    coord_x:
+                      description: Х координата центра
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата центра
+                      type: number
+                      format: float
+              tss:
+                description: Термометрические скважины на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код Термометрической скважины
+                      type: string
+                    name:
+                      description: Имя Термометрической скважины
+                      type: string
+                    coord_x:
+                      description: Х координата центра
+                      type: number
+                      format: float
+                    coord_y:
+                      description: Y координата центра
+                      type: number
+                      format: float
+              geological_sections:
+                description: Геологические разрезы на участке
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      description: Код Геологического разреза
+                      type: integer
+                      format: int32
+                    data:
+                      description: Данные Геологические разреза
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          depth:
+                            description: Глубина
+                            type: number
+                            format: float
+                          soil_type:
+                            description: Тип грунта
+                            type: string
+      example:
+        name: Куст газовых скважин № 24
+        code: ГТМ.025.01
+        size_length: 545
+        size_width: 1500
+        objects:
+          - piles:
+              - code: О.418
+                coord_x: 270.1722
+                coord_y: 325.3688
+                diameter: 219
+                length_under: 9.666
+                length_above: 0.334
+            supports:
+              - code: ОП.1
+                pile_code: О.453
+                length: 2.1
+                width: 159
+            traverses:
+              - pile_code_1: О.21
+                pile_code_2: О.22
+                height_pile_1: 2.6
+                height_pile_2: 2.6
+              - pile_code_1: О.23
+                pile_code_2: О.24
+                height_pile_1: 3.4
+                height_pile_2: 3.4
+            pipelines:
+              - pipeline_start_x: 643.887
+                pipeline_start_y: 301.4299
+                pipeline_start_z: 3.74
+                pipeline_end_x: 643.777
+                pipeline_end_y: 301.4299
+                pipeline_end_z: 3.74
+                diameter: 100
+              - pipeline_start_x: 643.777
+                pipeline_start_y: 301.4299
+                pipeline_start_z: 3.74
+                pipeline_end_x: 643.777
+                pipeline_end_y: 301.4299
+                pipeline_end_z: 2.32
+                diameter: 100
+            platforms:
+              - code: О.8
+                name: Площадка входа блока ЗРА1
+                vertices:
+                  - coord_x: 279.2004
+                    coord_y: 322.5002
+                  - coord_x: 279.2004
+                    coord_y: 325.5191
+                  - coord_x: 280.617
+                    coord_y: 325.5002
+                  - coord_x: 280.617
+                    coord_y: 322.5002
+                  - coord_x: 279.2004
+                    coord_y: 322.5002
+                thickness: 200
+                height: 0.63
+                fences:
+                  - fence_start_x: 279.2004
+                    fence_start_y: 322.5002
+                    fence_end_x: 280.617
+                    fence_end_y: 322.5002
+                  - fence_start_x: 280.617
+                    fence_start_y: 325.5002
+                    fence_end_x: 280.617
+                    fence_end_y: 322.5002
+                  - fence_start_x: 280.617
+                    fence_start_y: 325.5002
+                    fence_end_x: 279.2004
+                    fence_end_y: 325.5191
+                edges_dms:
+                  - edge_start_x: 279.2004
+                    edge_start_y: 322.5002
+                    edge_end_x: 280.617
+                    edge_end_y: 322.5002
+                    dm_start_code: ДМ.015963
+                    dm_end_code: ДМ.015962
+                  - edge_start_x: 280.617
+                    edge_start_y: 325.5002
+                    edge_end_x: 280.617
+                    edge_end_y: 322.5002
+                    dm_start_code: ДМ.015962
+                    dm_end_code: ДМ.015974
+                  - edge_start_x: 280.617
+                    edge_start_y: 325.5002
+                    edge_end_x: 279.2004
+                    edge_end_y: 325.5191
+                    dm_start_code: ДМ.015973
+                    dm_end_code: ДМ.015974
+            ladders:
+              - coord_start_x: 281.8417
+                coord_start_y: 324.0087
+                coord_end_x: 280.617
+                coord_end_y: 324.0087
+                width: 1
+                height_start: 1.83
+                height_end: 0.83
+            block_boxes:
+              - code: О.5
+                name: Блок ЗРА (поз.17)/ Блок 1
+                coord_x: 273.1558
+                coord_y: 324.0097
+                length_x: 12
+                length_y: 3
+                size_height: 2.5
+                height_above: 0.83
+                edges_orientation:
+                  - orientation: Север
+                    dms_pairs:
+                      - dms_start_code: ДМ.015970
+                        dms_end_code: ДМ.015971
+                      - dms_start_code: ДМ.015971
+                        dms_end_code: ДМ.015972
+                      - dms_start_code: ДМ.015972
+                        dms_end_code: ДМ.015973
+                  - orientation: Юг
+                    dms_pairs:
+                      - dms_start_code: ДМ.015967
+                        dms_end_code: ДМ.015966
+                      - dms_start_code: ДМ.015966
+                        dms_end_code: ДМ.015965
+                      - dms_start_code: ДМ.015965
+                        dms_end_code: ДМ.015964
+                      - dms_start_code: ДМ.015964
+                        dms_end_code: ДМ.015963
+                  - orientation: Восток
+                    dms_pairs:
+                      - dms_start_code: ДМ.015963
+                        dms_end_code: ДМ.015973
+                door_orientation: Восток
+            communication_masts:
+              - code: О.1
+                name: Мачта связи (поз.12)
+                coord_x: 260.6374
+                coord_y: 285.5203
+                height_above: 0.484
+                edges_orientation:
+                  - orientation: Север
+                    dms_pairs:
+                      - dms_start_code: ДМ.016051
+                        dms_end_code: ДМ.016052
+                      - dms_start_code: ДМ.016052
+                        dms_end_code: ДМ.016053
+                      - dms_start_code: ДМ.016053
+                        dms_end_code: ДМ.016054
+                  - orientation: Юг
+                    dms_pairs:
+                      - dms_start_code: ДМ.016048
+                        dms_end_code: ДМ.016059
+                      - dms_start_code: ДМ.016059
+                        dms_end_code: ДМ.016058
+                      - dms_start_code: ДМ.016058
+                        dms_end_code: ДМ.016057
+                  - orientation: Запад
+                    dms_pairs:
+                      - dms_start_code: ДМ.016051
+                        dms_end_code: ДМ.016050
+                      - dms_start_code: ДМ.016050
+                        dms_end_code: ДМ.016049
+                      - dms_start_code: ДМ.016049
+                        dms_end_code: ДМ.016048
+                  - orientation: Восток
+                    dms_pairs:
+                      - dms_start_code: ДМ.016054
+                        dms_end_code: ДМ.016055
+                      - dms_start_code: ДМ.016055
+                        dms_end_code: ДМ.016056
+                      - dms_start_code: ДМ.016056
+                        dms_end_code: ДМ.016057
+            spotlight_masts:
+              - code: О.11
+                name: Мачта прожекторная (поз.14)
+                size_height: 24
+                coord_x: 304.9238
+                coord_y: 322.9602
+                height_above: 0.484
+                edges_orientation:
+                  - orientation: Север
+                    dms_pairs:
+                      - dms_start_code: ДМ.015890
+                        dms_end_code: ДМ.015887
+                  - orientation: Юг
+                    dms_pairs:
+                      - dms_start_code: ДМ.015889
+                        dms_end_code: ДМ.015888
+                  - orientation: Запад
+                    dms_pairs:
+                      - dms_start_code: ДМ.015890
+                        dms_end_code: ДМ.015889
+                  - orientation: Восток
+                    dms_pairs:
+                      - dms_start_code: ДМ.015887
+                        dms_end_code: ДМ.015886
+            wells:
+              - code: О.111
+                name: SKV24-5
+                coord_x: 645.5361
+                coord_y: 301.4495
+                orientation: Юг
+            horizontal_flare_devices:
+              - code: О.1111
+                name: Устье факела
+                coord_x: 260.3502
+                coord_y: 403.1091
+                orientation: Север
+            dms:
+              - code: ДМ.015970
+                name: '24.345'
+                object_code: О.111
+                orientation: Юг
+            rps:
+              - code: РП.001179
+                name: RP24.11
+                coord_x: 488.855
+                coord_y: 320.658
+            tss:
+              - code: ТС.001205
+                name: B1
+                coord_x: 412.527
+                coord_y: 325.929
+            geological_sections:
+              - code: 1
+                data:
+                  - depth: 1
+                    soil_type: Грунт насыпной
+                  - depth: 2
+                    soil_type: Торф
+                  - depth: 3
+                    soil_type: Песок гравелистый, крупный и средней крупности
+                  - depth: 4
+                    soil_type: Суглинок
+                  - depth: 5
+                    soil_type: Глина
+                  - depth: 6
+                    soil_type: Супесь
+                  - depth: 7
+                    soil_type: Песок мелкий и пылеватый
+                  - depth: 8
+                    soil_type: Суглинок
+                  - depth: 9
+                    soil_type: Супесь
+                  - depth: 10
+                    soil_type: Торф
+                  - depth: 11
+                    soil_type: Грунт насыпной
+                  - depth: 12
+                    soil_type: Песок гравелистый, крупный и средней крупности
+              - code: 2
+                data:
+                  - depth: 1
+                    soil_type: Песок гравелистый, крупный и средней крупности
+                  - depth: 2
+                    soil_type: Торф
+                  - depth: 3
+                    soil_type: Песок гравелистый, крупный и средней крупности
+                  - depth: 4
+                    soil_type: Суглинок
+                  - depth: 5
+                    soil_type: Глина
+                  - depth: 6
+                    soil_type: Супесь
+                  - depth: 7
+                    soil_type: Песок мелкий и пылеватый
+                  - depth: 8
+                    soil_type: Суглинок
+                  - depth: 9
+                    soil_type: Супесь
+                  - depth: 10
+                    soil_type: Торф
+                  - depth: 11
+                    soil_type: Грунт насыпной
+                  - depth: 12
+                    soil_type: Торф
+    TemperatureMonitoringArray:
+      description: Данные мониторинга температур на участке за выбранный цикл в сравнении с нормативом
+      type: array
+      items:
+        type: object
+        properties:
+          thermometric_well_code:
+            description: Код термоскважины
+            type: string
+          cycle_rank:
+            description: Код выбранного цикла
+            type: integer
+          objects:
+            description: Объекты на участке
+            type: array
+            items:
+              type: object
+              properties:
+                depth_code:
+                  description: Код Глубины
+                  type: string
+                  enum:
+                    - T1
+                    - T2
+                    - T3
+                    - T4
+                    - T5
+                    - T6
+                    - T7
+                    - T8
+                    - T9
+                    - T10
+                    - T11
+                    - T12
+                    - T13
+                    - T14
+                    - T15
+                    - T16
+                depth:
+                  description: Глубина в м.
+                  type: number
+                  format: float
+                temperature:
+                  description: Температура на этой глубине
+                  type: number
+                  format: float
+                standard:
+                  description: Норматив для данного типа почвы
+                  type: number
+                  format: float
+                exceedance:
+                  description: Превышение норматива для данного типа почвы
+                  type: number
+                  format: float
+                color:
+                  description: 'Цвет превышения норматива для данного типа почвы: red - 0,01 градус и более, green - менее -0,11 градуса, yellow - до 0,01 градусов'
+                  type: string
+                  enum:
+                    - red
+                    - green
+                    - yellow
+      example:
+        - thermometric_well_code: ТС.001543
+          cycle_rank: 1
+          objects:
+            - depth_code: T1
+              depth: 0
+              temperature: 2.1
+              standard: -1.5
+              exceedance: 3.6
+              color: red
+            - depth_code: T2
+              depth: 0.5
+              temperature: -1.1
+              standard: -1
+              exceedance: -0.1
+              color: green
+            - depth_code: T16
+              depth: 10
+              temperature: 1.1
+              standard: -0.5
+              exceedance: 0.6
+              color: yellow
+        - thermometric_well_code: ТС.001544
+          cycle_rank: 2
+          objects:
+            - depth_code: T1
+              depth: 0
+              temperature: 2.1
+              standard: -1.5
+              exceedance: 3.6
+              color: red
+            - depth_code: T2
+              depth: 0.5
+              temperature: -1.1
+              standard: -1
+              exceedance: -0.1
+              color: green
+            - depth_code: T16
+              depth: 10
+              temperature: 1.1
+              standard: -0.5
+              exceedance: 0.6
+              color: yellow
+    VerticalDisplacementArray:
+      description: Данные мониторинга вертикальных перемещений на участке за выбранные циклы
+      type: array
+      items:
+        type: object
+        properties:
+          code:
+            description: Код ДМ
+            type: string
+          object_code:
+            description: Код связанного объекта
+            type: string
+          cycle1_rank:
+            description: Номер начального цикла
+            type: number
+            format: int16
+          cycle2_rank:
+            description: Номер конечного цикла
+            type: number
+            format: int16
+          cycle1:
+            description: Значение абсолютной высотной отметки в начальном цикле
+            type: number
+            format: float
+          cycle2:
+            description: Значение абсолютной высотной отметки в конечном цикле
+            type: number
+            format: float
+          difference:
+            description: Значение вертикального перемещения между циклами
+            type: number
+            format: float
+          color:
+            description: 'Цвет превышения норматива вертикального перемещения: red - 10,1 мм и более, green - менее 2 мм, yellow - до 10,1 мм'
+            type: string
+            enum:
+              - red
+              - green
+              - yellow
+      example:
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 2
+          cycle2_rank: 1
+          cycle1: 47.3546
+          cycle2: 47.355
+          difference: -0.4
+          color: green
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 3
+          cycle2_rank: 2
+          cycle1: 47.3542
+          cycle2: 47.3546
+          difference: -0.4
+          color: green
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 4
+          cycle2_rank: 3
+          cycle1: 47.3586
+          cycle2: 47.3542
+          difference: 4.4
+          color: yellow
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 5
+          cycle2_rank: 4
+          cycle1: 47.3579
+          cycle2: 47.3586
+          difference: -0.7
+          color: green
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 6
+          cycle2_rank: 5
+          cycle1: 47.3542
+          cycle2: 47.3579
+          difference: -3.7
+          color: yellow
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 7
+          cycle2_rank: 6
+          cycle1: 47.35587
+          cycle2: 47.3542
+          difference: 1.7
+          color: green
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 8
+          cycle2_rank: 7
+          cycle1: 47.35272
+          cycle2: 47.35587
+          difference: -3.2
+          color: yellow
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 9
+          cycle2_rank: 8
+          cycle1: 47.3585
+          cycle2: 47.35272
+          difference: 5.8
+          color: yellow
+        - code: ДМ.015962
+          object_code: О.451
+          cycle1_rank: 9
+          cycle2_rank: 1
+          cycle1: 47.3585
+          cycle2: 47.355
+          difference: 3.5
+          color: yellow
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 2
+          cycle2_rank: 1
+          cycle1: 47.3
+          cycle2: 47.3009
+          difference: -0.9
+          color: green
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 3
+          cycle2_rank: 2
+          cycle1: 47.3001
+          cycle2: 47.3
+          difference: 0.1
+          color: green
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 4
+          cycle2_rank: 3
+          cycle1: 47.3045
+          cycle2: 47.3001
+          difference: 4.4
+          color: yellow
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 5
+          cycle2_rank: 4
+          cycle1: 47.3012
+          cycle2: 47.3045
+          difference: -3.3
+          color: yellow
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 6
+          cycle2_rank: 5
+          cycle1: 47.3075
+          cycle2: 47.3012
+          difference: 6.3
+          color: yellow
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 7
+          cycle2_rank: 6
+          cycle1: 47.30409
+          cycle2: 47.3075
+          difference: -3.4
+          color: yellow
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 8
+          cycle2_rank: 7
+          cycle1: 47.30696
+          cycle2: 47.30409
+          difference: 2.9
+          color: yellow
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 9
+          cycle2_rank: 8
+          cycle1: 47.311
+          cycle2: 47.30696
+          difference: 4
+          color: yellow
+        - code: ДМ.015963
+          object_code: О.449
+          cycle1_rank: 9
+          cycle2_rank: 1
+          cycle1: 47.311
+          cycle2: 47.3009
+          difference: 10.1
+          color: red
+    RelativeDifferenceSedimentsArray:
+      description: Мониторинга относительной разности осадок на участке за выбранные циклы
+      type: array
+      items:
+        type: object
+        properties:
+          dm_start:
+            description: Данные начальной ДМ
+            type: array
+            items:
+              type: object
+              properties:
+                code:
+                  description: Код ДМ
+                  type: string
+                cycle1:
+                  description: Значение абсолютной высотной отметки в начальном цикле
+                  type: number
+                  format: float
+                cycle2:
+                  description: Значение абсолютной высотной отметки в конечном цикле
+                  type: number
+                  format: float
+                difference:
+                  description: Значение разницы абсолютных высотных отметок в между циклами
+                  type: number
+                  format: float
+          dm_end:
+            description: Данные конечной ДМ
+            type: array
+            items:
+              type: object
+              properties:
+                code:
+                  description: Код ДМ
+                  type: string
+                cycle1:
+                  description: Значение абсолютной высотной отметки в начальном цикле
+                  type: number
+                  format: float
+                cycle2:
+                  description: Значение абсолютной высотной отметки в конечном цикле
+                  type: number
+                  format: float
+                difference:
+                  description: Значение разницы абсолютных высотных отметок в между циклами
+                  type: number
+                  format: float
+          difference_value:
+            description: Значение относительной разницы осадок для этой пары ДМ для указанных циклов
+            type: number
+            format: float
+          excess_difference:
+            description: Значение превышения относительной разницы осадок для этой пары ДМ для указанных циклов
+            type: number
+            format: float
+          difference_standard:
+            description: Значение норматива относительной разницы осадок для этой пары ДМ
+            type: number
+            format: float
+          difference_color:
+            description: Цвет относительной разницы осадок для этой пары ДМ для указанных циклов
+            type: string
+            enum:
+              - red
+              - green
+              - yellow
+      example:
+        - dm_start:
+            - code: ДМ.015641
+              cycle1: 47.9815
+              cycle2: 47.9796
+              difference: -1.9
+          dm_end:
+            - code: ДМ.015642
+              cycle1: 47.9845
+              cycle2: 47.9852
+              difference: 0.7
+          difference_value: -2.6
+          excess_difference: 2.59
+          difference_standard: 0.01
+          difference_color: red
+        - dm_start:
+            - code: ДМ.015642
+              cycle1: 47.9815
+              cycle2: 47.9796
+              difference: -1.9
+          dm_end:
+            - code: ДМ.015643
+              cycle1: 47.9845
+              cycle2: 47.9852
+              difference: 0.7
+          difference_value: -2.6
+          excess_difference: 2.59
+          difference_standard: 0.01
+          difference_color: yellow

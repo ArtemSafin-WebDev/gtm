@@ -1,0 +1,946 @@
+[
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 2,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 25.17,
+                "standard": -1,
+                "exceedance": 26.17
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 18.51,
+                "standard": -1,
+                "exceedance": 19.51
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 11.87,
+                "standard": -1,
+                "exceedance": 12.87
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 8.31,
+                "standard": -1,
+                "exceedance": 9.31
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 5.06,
+                "standard": -1,
+                "exceedance": 6.06
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 2.46,
+                "standard": -1,
+                "exceedance": 3.46
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": 0.26,
+                "standard": -1,
+                "exceedance": 1.26
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": -0.02,
+                "standard": -1,
+                "exceedance": 0.98
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": -0.01,
+                "standard": -1,
+                "exceedance": 0.99
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": 0,
+                "standard": -1,
+                "exceedance": 1
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": -0.02,
+                "standard": -1,
+                "exceedance": 0.98
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": -0.04,
+                "standard": -1,
+                "exceedance": 0.96
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": 0,
+                "standard": -1,
+                "exceedance": 1
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": -0.11,
+                "standard": -1,
+                "exceedance": 0.89
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": -0.28,
+                "standard": -1,
+                "exceedance": 0.72
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": "",
+                "standard": -1,
+                "exceedance": 1
+            }
+        ]
+    },
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 3,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 21.54,
+                "standard": -1,
+                "exceedance": 22.54
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 11.17,
+                "standard": -1,
+                "exceedance": 12.17
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 9.8,
+                "standard": -1,
+                "exceedance": 10.8
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 8.62,
+                "standard": -1,
+                "exceedance": 9.62
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 7.74,
+                "standard": -1,
+                "exceedance": 8.74
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 6.94,
+                "standard": -1,
+                "exceedance": 7.94
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": 6.12,
+                "standard": -1,
+                "exceedance": 7.12
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": 5.13,
+                "standard": -1,
+                "exceedance": 6.13
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": 4.14,
+                "standard": -1,
+                "exceedance": 5.14
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": 3.03,
+                "standard": -1,
+                "exceedance": 4.03
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": 1.92,
+                "standard": -1,
+                "exceedance": 2.92
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": -0.1,
+                "standard": -1,
+                "exceedance": 0.9
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": -0.19,
+                "standard": -1,
+                "exceedance": 0.81
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": -0.17,
+                "standard": -1,
+                "exceedance": 0.83
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": -0.29,
+                "standard": -1,
+                "exceedance": 0.71
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": "",
+                "standard": -1,
+                "exceedance": 1
+            }
+        ]
+    },
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 4,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 11,
+                "standard": -1,
+                "exceedance": 12
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 8.63,
+                "standard": -1,
+                "exceedance": 9.63
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 6.31,
+                "standard": -1,
+                "exceedance": 7.31
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 3.69,
+                "standard": -1,
+                "exceedance": 4.69
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 1.63,
+                "standard": -1,
+                "exceedance": 2.63
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 0.19,
+                "standard": -1,
+                "exceedance": 1.19
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": 0.13,
+                "standard": -1,
+                "exceedance": 1.13
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": 0.19,
+                "standard": -1,
+                "exceedance": 1.19
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": 0.25,
+                "standard": -1,
+                "exceedance": 1.25
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": 0.19,
+                "standard": -1,
+                "exceedance": 1.19
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": 0.13,
+                "standard": -1,
+                "exceedance": 1.13
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": 0.25,
+                "standard": -1,
+                "exceedance": 1.25
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": 0.06,
+                "standard": -1,
+                "exceedance": 1.06
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": 0.06,
+                "standard": -1,
+                "exceedance": 1.06
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": 0,
+                "standard": -1,
+                "exceedance": 1
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": "",
+                "standard": -1,
+                "exceedance": 1
+            }
+        ]
+    },
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 5,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 5.97,
+                "standard": -1,
+                "exceedance": 6.97
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 3.16,
+                "standard": -1,
+                "exceedance": 4.16
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 3.07,
+                "standard": -1,
+                "exceedance": 4.07
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 3.41,
+                "standard": -1,
+                "exceedance": 4.41
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 3.73,
+                "standard": -1,
+                "exceedance": 4.73
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 3.79,
+                "standard": -1,
+                "exceedance": 4.79
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": 3.66,
+                "standard": -1,
+                "exceedance": 4.66
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": 3.28,
+                "standard": -1,
+                "exceedance": 4.28
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": 2.72,
+                "standard": -1,
+                "exceedance": 3.72
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": 2.15,
+                "standard": -1,
+                "exceedance": 3.15
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": 1.27,
+                "standard": -1,
+                "exceedance": 2.27
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": 0.1,
+                "standard": -1,
+                "exceedance": 1.1
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": -0.21,
+                "standard": -1,
+                "exceedance": 0.79
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": -0.22,
+                "standard": -1,
+                "exceedance": 0.78
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": -0.26,
+                "standard": -1,
+                "exceedance": 0.74
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": "",
+                "standard": -1,
+                "exceedance": 1
+            }
+        ]
+    },
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 6,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 12.85,
+                "standard": -1,
+                "exceedance": 13.85
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 8.92,
+                "standard": -1,
+                "exceedance": 9.92
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 3.73,
+                "standard": -1,
+                "exceedance": 4.73
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 0.19,
+                "standard": -1,
+                "exceedance": 1.19
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 0.02,
+                "standard": -1,
+                "exceedance": 1.02
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 0.02,
+                "standard": -1,
+                "exceedance": 1.02
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": -0.03,
+                "standard": -1,
+                "exceedance": 0.97
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": -0.11,
+                "standard": -1,
+                "exceedance": 0.89
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": -0.02,
+                "standard": -1,
+                "exceedance": 0.98
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": 0.03,
+                "standard": -1,
+                "exceedance": 1.03
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": -0.04,
+                "standard": -1,
+                "exceedance": 0.96
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": 0.02,
+                "standard": -1,
+                "exceedance": 1.02
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": -0.08,
+                "standard": -1,
+                "exceedance": 0.92
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": -0.12,
+                "standard": -1,
+                "exceedance": 0.88
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": -0.18,
+                "standard": -1,
+                "exceedance": 0.82
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": -0.16,
+                "standard": -1,
+                "exceedance": 0.84
+            }
+        ]
+    },
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 7,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 1.79,
+                "standard": -1,
+                "exceedance": 2.79
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 2.03,
+                "standard": -1,
+                "exceedance": 3.03
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 4.35,
+                "standard": -1,
+                "exceedance": 5.35
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 5.39,
+                "standard": -1,
+                "exceedance": 6.39
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 5.64,
+                "standard": -1,
+                "exceedance": 6.64
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 5.33,
+                "standard": -1,
+                "exceedance": 6.33
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": 4.97,
+                "standard": -1,
+                "exceedance": 5.97
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": 4.37,
+                "standard": -1,
+                "exceedance": 5.37
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": 3.73,
+                "standard": -1,
+                "exceedance": 4.73
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": 2.94,
+                "standard": -1,
+                "exceedance": 3.94
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": 2.16,
+                "standard": -1,
+                "exceedance": 3.16
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": 0.57,
+                "standard": -1,
+                "exceedance": 1.57
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": -0.06,
+                "standard": -1,
+                "exceedance": 0.94
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": -0.09,
+                "standard": -1,
+                "exceedance": 0.91
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": -0.18,
+                "standard": -1,
+                "exceedance": 0.82
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": -0.2,
+                "standard": -1,
+                "exceedance": 0.8
+            }
+        ]
+    },
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 8,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 14.79,
+                "standard": -1,
+                "exceedance": 15.79
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 13.33,
+                "standard": -1,
+                "exceedance": 14.33
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 10.84,
+                "standard": -1,
+                "exceedance": 11.84
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 8.57,
+                "standard": -1,
+                "exceedance": 9.57
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 5.79,
+                "standard": -1,
+                "exceedance": 6.79
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 3.15,
+                "standard": -1,
+                "exceedance": 4.15
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": 0.45,
+                "standard": -1,
+                "exceedance": 1.45
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": -0.03,
+                "standard": -1,
+                "exceedance": 0.97
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": -0.06,
+                "standard": -1,
+                "exceedance": 0.94
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": -0.01,
+                "standard": -1,
+                "exceedance": 0.99
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": -0.01,
+                "standard": -1,
+                "exceedance": 0.99
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": 0.02,
+                "standard": -1,
+                "exceedance": 1.02
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": -0.03,
+                "standard": -1,
+                "exceedance": 0.97
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": -0.11,
+                "standard": -1,
+                "exceedance": 0.89
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": -0.2,
+                "standard": -1,
+                "exceedance": 0.8
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": -0.16,
+                "standard": -1,
+                "exceedance": 0.84
+            }
+        ]
+    },
+    {
+        "thermometric_well_code": "ТС.001191",
+        "cycle_rank": 9,
+        "objects": [
+            {
+                "depth_code": "T1",
+                "depth": 0,
+                "temperature": 1.95,
+                "standard": -1,
+                "exceedance": 2.95
+            },
+            {
+                "depth_code": "T2",
+                "depth": 0.5,
+                "temperature": 2.09,
+                "standard": -1,
+                "exceedance": 3.09
+            },
+            {
+                "depth_code": "T3",
+                "depth": 1,
+                "temperature": 4.53,
+                "standard": -1,
+                "exceedance": 5.53
+            },
+            {
+                "depth_code": "T4",
+                "depth": 1.5,
+                "temperature": 5.5,
+                "standard": -1,
+                "exceedance": 6.5
+            },
+            {
+                "depth_code": "T5",
+                "depth": 2,
+                "temperature": 5.82,
+                "standard": -1,
+                "exceedance": 6.82
+            },
+            {
+                "depth_code": "T6",
+                "depth": 2.5,
+                "temperature": 5.77,
+                "standard": -1,
+                "exceedance": 6.77
+            },
+            {
+                "depth_code": "T7",
+                "depth": 3,
+                "temperature": 5.34,
+                "standard": -1,
+                "exceedance": 6.34
+            },
+            {
+                "depth_code": "T8",
+                "depth": 3.5,
+                "temperature": 4.7,
+                "standard": -1,
+                "exceedance": 5.7
+            },
+            {
+                "depth_code": "T9",
+                "depth": 4,
+                "temperature": 4.01,
+                "standard": -1,
+                "exceedance": 5.01
+            },
+            {
+                "depth_code": "T10",
+                "depth": 4.5,
+                "temperature": 3.2,
+                "standard": -1,
+                "exceedance": 4.2
+            },
+            {
+                "depth_code": "T11",
+                "depth": 5,
+                "temperature": 2.29,
+                "standard": -1,
+                "exceedance": 3.29
+            },
+            {
+                "depth_code": "T12",
+                "depth": 6,
+                "temperature": 0.77,
+                "standard": -1,
+                "exceedance": 1.77
+            },
+            {
+                "depth_code": "T13",
+                "depth": 7,
+                "temperature": 0.02,
+                "standard": -1,
+                "exceedance": 1.02
+            },
+            {
+                "depth_code": "T14",
+                "depth": 8,
+                "temperature": -0.07,
+                "standard": -1,
+                "exceedance": 0.93
+            },
+            {
+                "depth_code": "T15",
+                "depth": 9,
+                "temperature": -0.15,
+                "standard": -1,
+                "exceedance": 0.85
+            },
+            {
+                "depth_code": "T16",
+                "depth": 10,
+                "temperature": -0.21,
+                "standard": -1,
+                "exceedance": 0.79
+            }
+        ]
+    }
+]

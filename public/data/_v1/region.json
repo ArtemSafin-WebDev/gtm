@@ -1,0 +1,295 @@
+{
+    "name": "Куст газовых скважин № 24",
+    "code": "ГТМ.025.01",
+    "size_lenght": 545,
+    "size_width": 1500,
+    "objects": [
+        {
+            "piles": [
+                {
+                    "code": "О.451",
+                    "coord_x": 279.9796,
+                    "coord_y": 322.6008,
+                    "diameter": 219,
+                    "length_under": 9.353,
+                    "length_above": 0.647
+                },
+                {
+                    "code": "О.449",
+                    "coord_x": 279.0571,
+                    "coord_y": 322.5528,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.470",
+                    "coord_x": 276.1398,
+                    "coord_y": 322.5518,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.471",
+                    "coord_x": 273.0900,
+                    "coord_y": 322.5528,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.472",
+                    "coord_x": 270.1722,
+                    "coord_y": 322.5523,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.462",
+                    "coord_x": 267.2509,
+                    "coord_y": 322.5415,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.419",
+                    "coord_x": 267.2567,
+                    "coord_y": 325.368388,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.418",
+                    "coord_x": 270.1722,
+                    "coord_y": 325.3688,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.429",
+                    "coord_x": 273.0900,
+                    "coord_y": 325.3683,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.428",
+                    "coord_x": 276.1387,
+                    "coord_y": 325.3683,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                },
+                {
+                    "code": "О.454",
+                    "coord_x": 279.0576,
+                    "coord_y": 325.3688,
+                    "diameter": 219,
+                    "length_under": 9.666,
+                    "length_above": 0.334
+                }
+
+
+
+            ],
+            "supports": [
+                {
+                    "code": "О.453",
+                    "object_code": "О.470",
+                    "length": 4,
+                    "width": 219
+                }
+            ],
+            "platforms": [
+                {
+                    "code": "О.8",
+                    "name": "Площадка входа блока ЗРА1",
+                    "vertices": [
+                        {
+                            "coord_x": 279.0576,
+                            "coord_y": 325.3688
+                        },
+                        {
+                            "coord_x": 280.5696,
+                            "coord_y": 325.3688
+                        },
+                        {
+                            "coord_x": 280.5696,
+                            "coord_y": 322.5415
+                        },
+                        {
+                            "coord_x": 279.0576,
+                            "coord_y": 322.5415
+                        },
+                        {
+                            "coord_x": 279.0576,
+                            "coord_y": 325.3688
+                        }
+                    ],
+                    "thickness": 183,
+                    "height": 0.647,
+                    "fences": [
+                        {
+                            "fence_start_x": 279.0576,
+                            "fence_start_y": 325.3688,
+                            "fence_end_x": 280.5696,
+                            "fence_end_y": 325.3688
+                        },
+                        {
+                            "fence_start_x": 280.5696,
+                            "fence_start_y": 325.3688,
+                            "fence_end_x": 280.5696,
+                            "fence_end_y": 322.5415
+                        },
+                        {
+                            "fence_start_x": 280.5696,
+                            "fence_start_y": 322.5415,
+                            "fence_end_x": 279.0576,
+                            "fence_end_y": 322.5415
+                        }
+                    ]
+                }
+            ],
+            "block_boxs": [
+                {
+                    "code": "О.2",
+                    "name": "Блок ЗРА (1 блок)",
+                    "coord_x": 273.15425,
+                    "coord_y": 323.95515,
+                    "lenght_x": 12,
+                    "lenght_y": 3,
+                    "size_height": 3,
+                    "height_above": 0.334,
+                    "edges_orientation": [
+                        {
+                            "orientation": "Север",
+                            "dms_pairs": [
+                                {
+                                    "dms_start_coode": "ДМ.015970",
+                                    "dms_end_coode": "ДМ.015971"
+                                },
+                                {
+                                    "dms_start_coode": "ДМ.015971",
+                                    "dms_end_coode": "ДМ.015972"
+                                },
+                                {
+                                    "dms_start_coode": "ДМ.015972",
+                                    "dms_end_coode": "ДМ.015973"
+                                }
+                            ]
+                        },
+                        {
+                            "orientation": "Восток",
+                            "dms_pairs": [
+                                {
+                                    "dms_start_coode": "ДМ.015973",
+                                    "dms_end_coode": "ДМ.015963"
+                                }
+                            ]
+                        },
+                        {
+                            "orientation": "Север",
+                            "dms_pairs": [
+                                {
+                                    "dms_start_coode": "ДМ.015970",
+                                    "dms_end_coode": "ДМ.015971"
+                                },
+                                {
+                                    "dms_start_coode": "ДМ.015971",
+                                    "dms_end_coode": "ДМ.015972"
+                                },
+                                {
+                                    "dms_start_coode": "ДМ.015972",
+                                    "dms_end_coode": "ДМ.015973"
+                                }
+                            ]
+                        }
+                    ],
+                    "door_orientation": "Восток"
+                }
+            ],
+            "dms": [
+                {
+                    "code": "ДМ.015962",
+                    "name": "24.337",
+                    "object_code": "О.451",
+                    "orientation": "Юг"
+                },
+                {
+                    "code": "ДМ.015963",
+                    "name": "24.338",
+                    "object_code": "О.449",
+                    "orientation": "Юг"
+                },
+                {
+                    "code": "ДМ.015964",
+                    "name": "24.339",
+                    "object_code": "О.470",
+                    "orientation": "Юг"
+                },
+                {
+                    "code": "ДМ.015965",
+                    "name": "24.340",
+                    "object_code": "О.471",
+                    "orientation": "Юг"
+                },
+                {
+                    "code": "ДМ.015966",
+                    "name": "24.341",
+                    "object_code": "О.472",
+                    "orientation": "Север"
+                },
+                {
+                    "code": "ДМ.015967",
+                    "name": "24.342",
+                    "object_code": "О.462",
+                    "orientation": "Север"
+                },
+                {
+                    "code": "ДМ.015970",
+                    "name": "24.345",
+                    "object_code": "О.418",
+                    "orientation": "Юг"
+                },
+                {
+                    "code": "ДМ.015971",
+                    "name": "24.346",
+                    "object_code": "О.429",
+                    "orientation": "Север"
+                },
+                {
+                    "code": "ДМ.015972",
+                    "name": "24.347",
+                    "object_code": "О.428",
+                    "orientation": "Север"
+                },
+                {
+                    "code": "ДМ.015973",
+                    "name": "24.348",
+                    "object_code": "О.454",
+                    "orientation": "Юг"
+                },
+                {
+                    "code": "ДМ.015974",
+                    "name": "24.349",
+                    "object_code": "О.453",
+                    "orientation": "Юг"
+                }
+            ],
+            "tss": [
+                {
+                    "code": "ТО.001191",
+                    "name": "11",
+                    "coord_x": 270.39,
+                    "coord_y": 326.211
+                }
+            ]
+        }
+    ]
+}

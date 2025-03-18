@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --color-deepblue: rgba(20, 27, 77, 1);
+  --color-orangish: rgba(248, 199, 9, 1);
+  --color-greyish: #dadada;
+  --color-darktext: #171717;
+  --color-midgrey: rgba(115, 115, 115, 1);
+  --color-bluetext: rgba(20, 27, 77, 1);
+}

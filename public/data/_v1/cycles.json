@@ -1,0 +1,98 @@
+[
+    {
+        "code": "0",
+        "season": "SPRING",
+        "year": 2018,
+        "name": "0 (весна 2018)",
+        "rank": 0,
+        "period_date": "2018-08-31"
+    },
+    {
+        "code": "I",
+        "season": "AUTUMN",
+        "year": 2019,
+        "name": "I (осень 2019)",
+        "rank": 1,
+        "period_date": "2019-12-31"
+    },
+    {
+        "code": "II",
+        "season": "SPRING",
+        "year": 2020,
+        "name": "II (весна 2020)",
+        "rank": 2,
+        "period_date": "2020-08-31"
+    },
+    {
+        "code": "III",
+        "season": "AUTUMN",
+        "year": 2020,
+        "name": "III (осень 2020)",
+        "rank": 3,
+        "period_date": "2020-12-31"
+    },
+    {
+        "code": "IV",
+        "season": "SPRING",
+        "year": 2021,
+        "name": "IV (весна 2021)",
+        "rank": 4,
+        "period_date": "2021-08-31"
+    },
+    {
+        "code": "V",
+        "season": "AUTUMN",
+        "year": 2021,
+        "name": "V (осень 2021)",
+        "rank": 5,
+        "period_date": "2021-12-31"
+    },
+    {
+        "code": "VI",
+        "season": "SPRING",
+        "year": 2022,
+        "name": "VI (весна 2022)",
+        "rank": 6,
+        "period_date": "2022-08-31"
+    },
+    {
+        "code": "VII",
+        "season": "AUTUMN",
+        "year": 2022,
+        "name": "VII (осень 2022)",
+        "rank": 7,
+        "period_date": "2022-12-31"
+    },
+    {
+        "code": "VIII",
+        "season": "SPRING",
+        "year": 2023,
+        "name": "VIII (весна 2023)",
+        "rank": 8,
+        "period_date": "2023-08-31"
+    },
+    {
+        "code": "IX",
+        "season": "AUTUMN",
+        "year": 2023,
+        "name": "IX (осень 2023)",
+        "rank": 9,
+        "period_date": "2023-12-31"
+    },
+    {
+        "code": "X",
+        "season": "SPRING",
+        "year": 2024,
+        "name": "X (весна 2024)",
+        "rank": 10,
+        "period_date": "2024-08-31"
+    },
+    {
+        "code": "XI",
+        "season": "AUTUMN",
+        "year": 2024,
+        "name": "XI (осень 2024)",
+        "rank": 11,
+        "period_date": "2024-12-31"
+    }
+]
