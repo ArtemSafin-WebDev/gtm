@@ -14,6 +14,9 @@ export default function HierarchyItem({ depth, item }: IHierarchyItemProps) {
   const setActiveMainItem = useHierarchyStore(
     (state) => state.setActiveMainItem,
   );
+  const setActiveSubhierarchyItem = useHierarchyStore(
+    (state) => state.setSubhierarchyActiveItem,
+  );
   const activeMainItem = useHierarchyStore((state) => state.activeMainItem);
   const [open, setOpen] = useState(false);
   const handleClick = (event: React.MouseEvent) => {
@@ -21,7 +24,13 @@ export default function HierarchyItem({ depth, item }: IHierarchyItemProps) {
     if (items.length) {
       setOpen((prev) => !prev);
     } else {
-      setActiveMainItem(item);
+      if (!activeMainItem) {
+        setActiveMainItem(item);
+        setActiveSubhierarchyItem(null);
+      } else {
+        setActiveMainItem(null);
+        setActiveSubhierarchyItem(null);
+      }
     }
   };
   return (
@@ -29,7 +38,7 @@ export default function HierarchyItem({ depth, item }: IHierarchyItemProps) {
       <button
         onClick={handleClick}
         className={cn(
-          "flex cursor-pointer items-center gap-4 px-4 py-3 text-sm font-medium text-midgrey",
+          "flex w-full cursor-pointer items-center gap-4 px-4 py-3 text-left text-sm font-medium text-midgrey transition-colors select-none",
           {
             "pl-11": depth === 1,
             "bg-orangish": activeMainItem?.code === item.code,
@@ -39,9 +48,12 @@ export default function HierarchyItem({ depth, item }: IHierarchyItemProps) {
       >
         {items.length ? (
           <ArrowDownIcon
-            className={cn("h-3 w-3 fill-current transition-transform", {
-              "rotate-180": open,
-            })}
+            className={cn(
+              "h-3 w-3 shrink-0 fill-current transition-transform",
+              {
+                "rotate-180": open,
+              },
+            )}
           />
         ) : null}
         {name}

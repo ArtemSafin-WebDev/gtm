@@ -9,3 +9,9 @@
   --color-midgrey: rgba(115, 115, 115, 1);
   --color-bluetext: rgba(20, 27, 77, 1);
 }
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

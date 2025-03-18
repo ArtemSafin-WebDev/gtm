@@ -1,10 +1,13 @@
 import { useEffect, useRef } from "react";
 import useRegionStore from "../store/RegionStore";
 import useCyclesStore from "../store/CyclesStore";
+import useHierarchyStore from "../store/HierarchyStore";
+import Popover from "./Popover";
 
 export default function ModelView() {
   const regionData = useRegionStore((state) => state.data);
   const cyclesData = useCyclesStore((state) => state.data);
+
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -20,6 +23,7 @@ export default function ModelView() {
         ref={ref}
         className="absolute top-0 left-0 h-full w-full"
       ></canvas>
+      <Popover />
     </div>
   );
 }
