@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import useRegionStore from "../store/RegionStore";
 import useCyclesStore from "../store/CyclesStore";
-import useHierarchyStore from "../store/HierarchyStore";
+
 import Popover from "./Popover";
 
 export default function ModelView() {

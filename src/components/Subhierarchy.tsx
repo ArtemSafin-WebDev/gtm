@@ -1,11 +1,13 @@
 import { DmsEntity, PilesEntity } from "../ApiTypes";
 import useHierarchyStore from "../store/HierarchyStore";
 import useRegionStore from "../store/RegionStore";
+import useSearchStore from "../store/SearchStore";
 import { cn } from "../utils";
 
 export default function Subhierarchy() {
   const activeItem = useHierarchyStore((state) => state.activeMainItem);
   const regionData = useRegionStore((state) => state.data);
+  const searchQuery = useSearchStore((state) => state.query);
   const activeSubhierarchyItem = useHierarchyStore(
     (state) => state.subhierarchyActiveItem,
   );
@@ -21,15 +23,32 @@ export default function Subhierarchy() {
   const piles = currentBlock?.piles;
   const dms = currentBlock?.dms;
 
-  const pilesWithDms = piles?.map((pile) => {
-    const correspondingDms = dms?.find((dm) => dm.object_code === pile.code);
-    return [pile, correspondingDms] as [PilesEntity, DmsEntity | undefined];
-  });
+  const pilesWithDms = piles
+    ?.map((pile) => {
+      const correspondingDms = dms?.find((dm) => dm.object_code === pile.code);
+      return [pile, correspondingDms] as [PilesEntity, DmsEntity | undefined];
+    })
+    .filter((item) => {
+      if (searchQuery.trim() === "") return true;
+      if (
+        item[0].code.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item[1]?.code?.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+        return true;
+      return false;
+    });
+
+  console.log("Piles with dms", pilesWithDms);
   if (!pilesWithDms) return null;
 
   return (
     <div className="relative flex w-[240px] border-l border-greyish">
       <div className="absolute inset-0 scrollbar-hidden overflow-y-auto">
+        {!pilesWithDms.length && searchQuery.trim() ? (
+          <div className="px-5 py-3 text-left text-sm text-midgrey">
+            Результаты не найдены
+          </div>
+        ) : null}
         {pilesWithDms.map((item) => (
           <button
             onClick={() => {

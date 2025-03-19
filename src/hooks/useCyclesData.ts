@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { CyclesData } from "../ApiTypes";
 
 export default function useCyclesData(url: string) {
-  const [data, setData] = useState<CyclesData | null>(null);
+  const [data, setData] = useState<CyclesData[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
@@ -25,7 +25,7 @@ export default function useCyclesData(url: string) {
       })
       .then((data) => {
         console.log("Data", data);
-        setData(data as CyclesData);
+        setData(data as CyclesData[]);
       })
       .catch((err) => {
         if (err.name === "AbortError") {
