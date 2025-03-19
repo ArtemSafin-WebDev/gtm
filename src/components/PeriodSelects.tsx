@@ -9,8 +9,6 @@ export default function PeriodSelects() {
   const to = useCyclesStore((state) => state.to);
   const from = useCyclesStore((state) => state.from);
 
-  console.log("Cycles data hello", cyclesData);
-
   useEffect(() => {
     if (!cyclesData) return;
 
@@ -67,15 +65,12 @@ export default function PeriodSelects() {
     return false;
   });
 
-  console.log("To options", toOptions, toInitial, from, to);
-
   return (
     <div className="hello mb-3 flex flex-col gap-3">
       <Select
         options={fromOptions ?? []}
         placeholder="С"
         onOptionSelect={(item) => {
-          console.log("Selected from value", item);
           setFrom(item.value);
         }}
         initialValue={fromInitial}
@@ -84,7 +79,6 @@ export default function PeriodSelects() {
         options={toOptions ?? []}
         placeholder="До"
         onOptionSelect={(item) => {
-          console.log("Selected from value", item);
           setTo(item.value);
         }}
         initialValue={toInitial}

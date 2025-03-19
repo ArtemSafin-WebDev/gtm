@@ -38,7 +38,6 @@ export default function Subhierarchy() {
       return false;
     });
 
-  console.log("Piles with dms", pilesWithDms);
   if (!pilesWithDms) return null;
 
   return (
