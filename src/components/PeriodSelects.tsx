@@ -1,7 +1,6 @@
 import useCyclesStore from "@/store/CyclesStore";
-import Select, { SelectOption } from "./Select";
-import { useEffect, useMemo, useState } from "react";
-import { CyclesData } from "@/ApiTypes";
+import Select from "./Select";
+import { useEffect } from "react";
 
 export default function PeriodSelects() {
   const cyclesData = useCyclesStore((state) => state.data);
